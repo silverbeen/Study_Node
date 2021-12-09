@@ -7,18 +7,16 @@ module.exports = class User extends Sequelize.Model {
         name: {
           type: Sequelize.STRING(20),
           allowNull: false,
-          defaultValue: "",
-          //  unique: true,
+
+          unique: true,
         },
         age: {
           type: Sequelize.INTEGER.UNSIGNED,
           allowNull: false,
-          defaultValue: 0,
         },
         married: {
           type: Sequelize.BOOLEAN,
           allowNull: false,
-          defaultValue: false,
         },
         comment: {
           type: Sequelize.TEXT,

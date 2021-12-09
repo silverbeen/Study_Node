@@ -7,6 +7,7 @@ module.exports = class Comment extends Sequelize.Model {
         comment: {
           type: Sequelize.STRING(100),
           allowNull: false,
+          defaultValue: true,
         },
         created_at: {
           type: Sequelize.DATE,
