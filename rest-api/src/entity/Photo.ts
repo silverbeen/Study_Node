@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 import { User } from "./User";
 
 @Entity()
@@ -15,7 +15,7 @@ export class Photo {
   description!: string;
 
   @Column()
-  filename: string;
+  filename!: string;
 
   @Column("double")
   views!: number;

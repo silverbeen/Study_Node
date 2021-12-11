@@ -1,6 +1,9 @@
-import { createConnection, getConnectionOptions } from "typeorm";
+import express, { Application, Request, Response, NextFunction } from "express";
 
-export const createTypeormConn = async () => {
-  const connectionOptions = await getConnectionOptions(process.env.NODE_ENV);
-  return await createConnection({ ...connectionOptions, name: "default" });
-};
+const app: Application = express();
+
+app.set("port", process.env.PORT || 3000);
+
+app.listen(app.get("port"), () => {
+  console.log(app.get("port"), "번 포트에서 대기 중");
+});
